@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Registration Form</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style type="text/css">
+   .container{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+   }
+</style>
+<body>
+  <div class="container mt-5"> <!-- The 'container' class creates a centered layout -->
+    <h2 class="mb-4">Customer Registration</h2> <!-- Title with margin bottom -->
+
+    <!-- Registration form -->
+    <div>
+    <form action="RegisterServlet" method="post">
+      <!-- Customer Name -->
+      <div class="form-group"> <!-- Grouping for each form field -->
+        <label for="cname">Name</label> <!-- Label for the input -->
+        <input type="text" class="form-control" id="cname" name="cname" placeholder="Enter your name" required> <!-- Text input with Bootstrap styling -->
+      </div>
+
+      <!-- Mobile Number -->
+      <div class="form-group"> <!-- Mobile number with validation for digits only -->
+        <label for="cmobile">Mobile</label>
+        <input type="tel" class="form-control" id="cmobile" name="cmobile" pattern="[0-9]{10}" placeholder="Enter your mobile number" required> <!-- 'pattern' ensures 10-digit input -->
+      </div>
+
+      <!-- Email Address -->
+      <div class="form-group">
+        <label for="cemail">Email</label>
+        <input type="email" class="form-control" id="cemail" name="cemail" placeholder="Enter your email" required> <!-- Email input with proper validation -->
+      </div>
+
+      <!-- Location -->
+      <div class="form-group">
+        <label for="clocation">Location</label>
+        <input type="text" class="form-control" id="clocation" name="clocation" placeholder="Enter your location" required>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="cpassword">Password</label> <!-- Password input with masking -->
+        <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Enter a password" required>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-info">Register</button> <!-- Bootstrap button for form submission -->
+    </form>
+    </div>
+    <div>
+          <a href="login.html"  style="margin-top:50px"><button class="btn btn-warning">Login</button></a>
+    </div>
+  </div>
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
